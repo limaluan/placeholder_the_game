@@ -1,0 +1,65 @@
+# Godot-specific files
+.import/
+export_presets.cfg
+export/
+
+# System-specific files
+.DS_Store
+Thumbs.db
+
+# Backup files
+*.tmp
+*.temp
+*.bak
+*.old
+*.save
+
+# Swap files
+*.swp
+*.swo
+
+# Hidden system files
+._*
+
+# Compiled files
+*.exe
+*.dll
+*.so
+*.dylib
+*.pdb
+
+# Godot Editor-specific files
+.godot/
+.godot/mono/
+
+# Mono specific files (C#)
+.mono/
+*.pdb
+*.csproj
+*.sln
+*.userprefs
+
+# Visual Studio Code specific files
+.vscode/
+
+# Logs
+*.log
+
+# Godot-specific export files (optional, remove if you want to version control exports)
+*.exe
+*.apk
+*.x86
+*.x86_64
+*.pck
+*.zip
+
+# Auto-generated files
+*.import
+*.msp
+
+# User-specific project settings (optional)
+project.godot
+
+# Godot 4 specific directories
+bin/
+.cache/
