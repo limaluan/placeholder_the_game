@@ -6,7 +6,7 @@ public partial class Player : CharacterBody2D
   [Export]
   public float Speed { get; set; } = 150.0f;
   [Export]
-  public float JumpForce { get; set; } = -200.0f;
+  public float JumpForce { get; set; } = -350.0f;
 
   public float gravity = ProjectSettings.GetSetting("physics/2d/default_gravity").AsSingle();
   private AnimatedSprite2D anim;
@@ -50,6 +50,16 @@ public partial class Player : CharacterBody2D
     else if (Velocity.X == 0 && IsOnFloor())
     {
       anim.Play("idle");
+    }
+
+    // Lógica de animação ao Pular
+    if (Velocity.Y < 0 && !IsOnFloor())
+    {
+      anim.Play("jump");
+    }
+    else if (Velocity.Y > 0 && !IsOnFloor())
+    {
+      anim.Play("fall");
     }
 
     // Vira a direção do Sprite
