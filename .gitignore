@@ -1,62 +1,15 @@
-# Godot-specific files
-.import/
-export_presets.cfg
-export/
-
-# System-specific files
-.DS_Store
-Thumbs.db
-
-# Backup files
-*.tmp
-*.temp
-*.bak
-*.old
-*.save
-
-# Swap files
-*.swp
-*.swo
-
-# Hidden system files
-._*
-
-# Compiled files
-*.exe
-*.dll
-*.so
-*.dylib
-*.pdb
-
-# Godot Editor-specific files
+# Godot 4+ specific ignores
 .godot/
-.godot/mono/
 
-# Mono specific files (C#)
+# Godot-specific ignores
+.import/
+export.cfg
+export_presets.cfg
+
+# Imported translations (automatically generated from CSV files)
+*.translation
+
+# Mono-specific ignores
 .mono/
-*.pdb
-*.csproj
-*.sln
-*.userprefs
-
-# Visual Studio Code specific files
-.vscode/
-
-# Logs
-*.log
-
-# Godot-specific export files (optional, remove if you want to version control exports)
-*.exe
-*.apk
-*.x86
-*.x86_64
-*.pck
-*.zip
-
-# Auto-generated files
-*.import
-*.msp
-
-# Godot 4 specific directories
-bin/
-.cache/
+data_*/
+mono_crash.*.json
