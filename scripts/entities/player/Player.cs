@@ -7,6 +7,7 @@ public partial class Player : CharacterBody2D
   public float Speed { get; set; } = 150.0f;
   [Export]
   public float JumpForce { get; set; } = -350.0f;
+  private bool lockAnimations = false;
 
   public float gravity = ProjectSettings.GetSetting("physics/2d/default_gravity").AsSingle();
   private AnimatedSprite2D anim;
@@ -53,11 +54,11 @@ public partial class Player : CharacterBody2D
     }
 
     // Lógica de animação ao Pular
-    if (Velocity.Y < 0 && !IsOnFloor())
+    if (Velocity.Y < 0 && !IsOnFloor() && lockAnimations == false)
     {
       anim.Play("jump");
     }
-    else if (Velocity.Y > 0 && !IsOnFloor())
+    else if (Velocity.Y > 0 && !IsOnFloor() && lockAnimations == false)
     {
       anim.Play("fall");
     }
@@ -70,6 +71,23 @@ public partial class Player : CharacterBody2D
     else if (Velocity.X > 0)
     {
       anim.FlipH = false;
+    }
+  }
+
+  public void DoFlip()
+  {
+    if (!IsOnFloor())
+    {
+      lockAnimations = true;
+      anim.Play("double_jump");
+    }
+  }
+
+  private void OnAnimationFinished()
+  {
+    if (anim.Animation == "double_jump")
+    {
+      lockAnimations = false;
     }
   }
 }
